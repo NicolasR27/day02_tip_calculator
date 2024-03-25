@@ -10,6 +10,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +19,14 @@ class _MyAppState extends State<MyApp> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('total AmOUNT ')],
+          children: [
+            Text('Total Amount'),
+            TextField(
+              controller: controller,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(hintText: '\$100.00'),
+            )
+          ],
         ),
       ),
     ));
